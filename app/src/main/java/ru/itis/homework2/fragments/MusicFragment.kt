@@ -5,6 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import ru.itis.homework2.R
+import ru.itis.homework2.SongAdapter
 import ru.itis.homework2.databinding.FragmentMusicBinding
 
 open class MusicFragment : Fragment() {
@@ -20,8 +24,13 @@ open class MusicFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val view = inflater.inflate(R.layout.fragment_music, container, false)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.music_list)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        val adapter = SongAdapter()
+        recyclerView.adapter = adapter
         binding = FragmentMusicBinding.inflate(inflater, container, false)
-        return binding!!.root
+        return view
     }
 
     override fun onDestroyView() {

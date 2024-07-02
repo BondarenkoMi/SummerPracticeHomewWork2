@@ -48,7 +48,28 @@
             android:id="@+id/action_homeFragment_to_textFragment"
             app:destination="@id/textFragment" />
     </fragment>
-
+    <fragment
+        android:id="@+id/detailSongFragment"
+        android:name="ru.itis.homework2.fragments.DetailSongFragment"
+        android:label="Detail Song"
+        tools:layout="@layout/item_song_detail">
+        <action
+            android:id="@+id/action_musicFragment_to_detailSongFragment"
+            app:destination="@id/detailSongFragment">
+            <argument
+                android:name="songTitle"
+                app:argType="string" />
+            <argument
+                android:name="artistName"
+                app:argType="string" />
+            <argument
+                android:name="albumTitle"
+                app:argType="string" />
+            <argument
+                android:name="songImage"
+                app:argType="string" />
+        </action>
+    </fragment>
     <fragment
         android:id="@+id/notificationsFragment"
         android:name="ru.itis.homework2.fragments.NotificationsFragment"
@@ -107,6 +128,9 @@
         <action
             android:id="@+id/action_musicFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_musicFragment_to_detailSongFragment"
+            app:destination="@id/detailSongFragment" />
     </fragment>
 
     <fragment

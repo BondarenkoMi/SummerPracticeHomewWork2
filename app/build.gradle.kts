@@ -38,8 +38,9 @@ android {
     }
 }
 dependencies {
-    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
+    implementation ("com.squareup.picasso:picasso:2.8")
 
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
